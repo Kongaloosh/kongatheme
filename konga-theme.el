@@ -1,8 +1,8 @@
-;;; black-theme.el --- Theme 
+;;; konga-theme.el --- Theme
 
-;; Copyright (C) 2021 , 
+;; Copyright (C) 2021 , kongaloosh
 
-;; Author: 
+;; Author: kongaloosh
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "24"))
 ;; Created with ThemeCreator, https://github.com/mswift42/themecreator.
@@ -27,28 +27,36 @@
 
 ;;; Code:
 
- (deftheme black)
+ (deftheme konga)
  (let ((class '((class color) (min-colors 89)))
-       (fg1 "#cee5c2")
-       (fg2 "#bed3b2")
+       (fg1 "#e7ffd9")
+       (fg2 "#cee5c1")
        (fg3 "#adc0a3")
        (fg4 "#9dae93")
        (bg1 "#3a3d3f")
        (bg2 "#4a4d4e")
        (bg3 "#5a5c5e")
        (bg4 "#696c6d")
+       (cursor "#a8edd3")
        (builtin "#80dbaf")
        (keyword "#9ad992")
-       (const   "#818A67")
+       (const   "#dbff70")
        (comment "#92c8dd")
        (func    "#eee8aa")
        (str     "#729fb1")
        (type    "#33a37e")
        (var     "#6db686")
        (warning "#eca2a2")
-       (warning2 "#f9c890"))
+       (warning2 "#f9c890")
+       (org-bullet-1 "#6db686")
+       (org-bullet-2 "#9bdb76")
+       (org-bullet-3 "#eee8aa")
+       (org-bullet-4 "#b4a9eb")
+       (org-bullet-5 "#729fb1")
+
+       )
    (custom-theme-set-faces
-   'black
+   'konga
         `(default ((,class (:background ,bg1 :foreground ,fg1))))
         `(font-lock-builtin-face ((,class (:foreground ,builtin))))
         `(font-lock-comment-face ((,class (:foreground ,comment))))
@@ -67,7 +75,7 @@
         `(highlight ((,class (:foreground ,fg3 :background ,bg3))))
 	`(hl-line ((,class (:background  ,bg2))))
 	`(fringe ((,class (:background ,bg2 :foreground ,fg4))))
-	`(cursor ((,class (:background ,bg3))))
+	`(cursor ((,class (:background ,cursor))))
         `(show-paren-match-face ((,class (:background ,warning))))
         `(isearch ((,class (:bold t :foreground ,warning :background ,bg3))))
         `(mode-line ((,class (:box (:line-width 1 :color nil) :bold t :foreground ,fg4 :background ,bg2))))
@@ -81,10 +89,11 @@
 	`(link ((,class (:foreground ,const :underline t))))
 	`(org-code ((,class (:foreground ,fg2))))
 	`(org-hide ((,class (:foreground ,fg4))))
-        `(org-level-1 ((,class (:bold t :foreground ,fg2 :height 1.1))))
-        `(org-level-2 ((,class (:bold nil :foreground ,fg3))))
-        `(org-level-3 ((,class (:bold t :foreground ,fg4))))
-        `(org-level-4 ((,class (:bold nil :foreground ,bg4))))
+        `(org-level-1 ((,class (:bold t :foreground ,org-bullet-1 :height 1.1))))
+        `(org-level-2 ((,class (:bold t :foreground ,org-bullet-2 :height 1.1))))
+        `(org-level-3 ((,class (:bold t :foreground ,org-bullet-3 :height 1.1))))
+        `(org-level-4 ((,class (:bold t :foreground ,org-bullet-4 :height 1.1))))
+        `(org-level-5 ((,class (:bold t :foreground ,org-bullet-5 :height 1.1))))
         `(org-date ((,class (:underline t :foreground ,var) )))
         `(org-footnote  ((,class (:underline t :foreground ,fg4))))
         `(org-link ((,class (:underline t :foreground ,type ))))
@@ -136,7 +145,7 @@
         `(js3-function-param-face ((,class (:foreground ,fg2))))
         `(js3-jsdoc-tag-face ((,class (:foreground ,keyword))))
         `(js3-instance-member-face ((,class (:foreground ,const))))
-	`(warning ((,class (:foreground ,warning)))) 
+	`(warning ((,class (:foreground ,warning))))
 	`(ac-completion-face ((,class (:underline t :foreground ,keyword))))
 	`(info-quoted-name ((,class (:foreground ,builtin))))
 	`(info-string ((,class (:foreground ,str))))
@@ -244,13 +253,13 @@
   ;; emacs >= 26.1
   (when (>= emacs-major-version 26)
     (custom-theme-set-faces
-     'black
+     'konga
      `(line-number ((t (:inherit fringe))))
      `(line-number-current-line ((t (:inherit fringe :foreground "white" :weight bold))))))
   ;; emacs >= 27.1
   (when (>= emacs-major-version 27)
     (custom-theme-set-faces
-     'black
+     'konga
      `(line-number ((t (:background ,bg2 :foreground ,fg4))))
      `(line-number-current-line ((t (:background ,bg2 :foreground ,fg1))))
      `(tab-line ((,class (:inherit fringe :box (:line-width 4 :color ,bg2)))))
@@ -266,10 +275,10 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'black)
+(provide-theme 'konga)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; black-theme.el ends here
+;;; konga-theme.el ends here
